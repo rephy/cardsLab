@@ -12,9 +12,11 @@ public class Deck {
 
         deck = new ArrayList<>();
 
-        for (int i = 0; i < minLength; i++) {
-            deck.add(new Card(ranks[i], suits[i], pointValues[i]));
-            size++;
+        for (String suit : suits) {
+            for (int i = 0; i < minLength; i++) {
+                deck.add(new Card(ranks[i], suit, pointValues[i]));
+                size++;
+            }
         }
 
         dealt = new ArrayList<>();
@@ -23,7 +25,8 @@ public class Deck {
     }
 
     public void shuffle() {
-        for (int i = 0; i < dealt.size(); i++) {
+        int dealtSize = dealt.size();
+        for (int i = 0; i < dealtSize; i++) {
             deck.add(dealt.remove(0));
             size++;
         }

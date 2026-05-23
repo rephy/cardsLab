@@ -16,8 +16,8 @@ public class CardTester {
 
         System.out.println();
 
-        System.out.println(cardOne.equals(cardTwo));
-        System.out.println(cardOne.equals(cardThree));
-        System.out.println(cardTwo.equals(cardThree));
+        System.out.println(cardOne.matches(cardTwo));
+        System.out.println(cardOne.matches(cardThree));
+        System.out.println(cardTwo.matches(cardThree));
     }
 }
