@@ -23,7 +23,21 @@ public class Deck {
     }
 
     public void shuffle() {
-        return;
+        for (int i = 0; i < dealt.size(); i++) {
+            deck.add(dealt.remove(0));
+            size++;
+        }
+
+        Shuffler shuffler = new Shuffler(size, 3);
+        int[] newIndices = shuffler.shuffle();
+
+        ArrayList<Card> newDeck = new ArrayList<>();
+
+        for (int index : newIndices) {
+            newDeck.add(deck.get(index));
+        }
+
+        deck = newDeck;
     }
 
     public boolean isEmpty() {

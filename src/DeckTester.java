@@ -14,5 +14,35 @@ public class DeckTester {
 
             System.out.println();
         }
+
+        String[] ranks = {
+            "Two", "Three", "Four", "Five", "Six", "Seven",
+            "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"
+        };
+
+        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+
+        int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
+
+        String[] deckRanks = new String[52];
+        String[] deckSuits = new String[52];
+        int[] deckValues = new int[52];
+
+        int index = 0;
+
+        for (String suit : suits) {
+            for (int i = 0; i < ranks.length; i++) {
+                deckRanks[index] = ranks[i];
+                deckSuits[index] = suit;
+                deckValues[index] = values[i];
+                index++;
+            }
+        }
+
+        Deck testDeck = new Deck(deckRanks, deckSuits, deckValues);
+
+        while (!testDeck.isEmpty()) {
+            System.out.println(testDeck.deal());
+        }
     }
 }
