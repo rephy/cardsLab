@@ -6,9 +6,7 @@ public class Deck {
     private int size;
 
     public Deck(String[] ranks, String[] suits, int[] pointValues) {
-        int minLengthOne = Math.min(ranks.length, suits.length);
-        int minLengthTwo = Math.min(pointValues.length, suits.length);
-        int minLength = Math.min(minLengthOne, minLengthTwo);
+        int minLength = Math.min(ranks.length, pointValues.length);
 
         deck = new ArrayList<>();
 
@@ -62,5 +60,18 @@ public class Deck {
         size--;
 
         return dealtCard;
+    }
+
+    public String toString() {
+        String s = "";
+
+        for (Card card : deck) {
+            s += card.toString() + "\n";
+        }
+        for (Card card : dealt) {
+            s += card.toString() + "\n";
+        }
+
+        return s;
     }
 }

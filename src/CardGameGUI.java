@@ -266,7 +266,11 @@ public class CardGameGUI extends JFrame implements ActionListener {
   if (c == null) {
    return "cards/back1.GIF";
   }
-  str += c.rank() + c.suit();
+  if (c.rank().equals("Ace") || c.rank().equals("Jack") || c.rank().equals("Queen") || c.rank().equals("King")) {
+   str += c.rank().toLowerCase() + c.suit().toLowerCase();
+  } else {
+   str += c.pointValue() + c.suit().toLowerCase();
+  }
   if (isSelected) {
    str += "S";
   }

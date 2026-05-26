@@ -7,6 +7,8 @@ public abstract class Board {
     public Board(String[] ranks, String[] suits, int[] values, int boardSize) {
         deck = new Deck(ranks, suits, values);
 
+        System.out.println(deck);
+
         cards = new Card[boardSize];
     }
 
