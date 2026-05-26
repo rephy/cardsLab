@@ -83,7 +83,7 @@ public abstract class Board {
         return isEmpty() && deck.isEmpty();
     }
 
-    private void replaceSelectedCards(int[] indexes) {
+    public void replaceSelectedCards(int[] indexes) {
         for (int i : indexes) {
             deal(i);
         }

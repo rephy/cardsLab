@@ -21,7 +21,7 @@ public class ElevensBoard extends Board {
         return containsPairSum11(indexes) || containsJQK(indexes);
     }
 
-    public boolean containsPairSum11(int[] indexes) {
+    private boolean containsPairSum11(int[] indexes) {
         Card[] selectedCards = new Card[indexes.length];
         for (int i = 0; i < indexes.length; i++) {
             selectedCards[i] = cardAt(indexes[i]);
@@ -38,7 +38,7 @@ public class ElevensBoard extends Board {
         return false;
     }
 
-    public boolean containsJQK(int[] indexes) {
+    private boolean containsJQK(int[] indexes) {
         boolean jackFound = false;
         boolean queenFound = false;
         boolean kingFound = false;
