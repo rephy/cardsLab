@@ -357,20 +357,10 @@ public class CardGameGUI extends JFrame implements ActionListener {
  private class MyMouseListener implements MouseListener {
 
   /**
-   * Handle a mouse click on a card by toggling its "selected" property.
-   * Each card is represented as a label.
+   * Ignore a mouse clicked event.
    * @param e the mouse event.
    */
   public void mouseClicked(MouseEvent e) {
-   for (int k = 0; k < board.size(); k++) {
-    if (e.getSource().equals(displayCards[k])
-      && board.cardAt(k) != null) {
-     selections[k] = !selections[k];
-     repaint();
-     return;
-    }
-   }
-   signalError();
   }
 
   /**
@@ -395,10 +385,20 @@ public class CardGameGUI extends JFrame implements ActionListener {
   }
 
   /**
-   * Ignore a mouse pressed event.
+   * Handle a mouse press on a card by toggling its "selected" property.
+   * Each card is represented as a label.
    * @param e the mouse event.
    */
   public void mousePressed(MouseEvent e) {
+   for (int k = 0; k < board.size(); k++) {
+    if (e.getSource().equals(displayCards[k])
+      && board.cardAt(k) != null) {
+     selections[k] = !selections[k];
+     repaint();
+     return;
+    }
+   }
+   signalError();
   }
  }
 }
